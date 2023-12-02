@@ -1,40 +1,44 @@
-// window.onUnload = function(){
-//     console.log("delete_otherchannel.js loaded");
-// }
+// 表示を許可するチャンネルのリスト
+let allow_channels =[]
 
-// スクロールが発生した時のイベント
+// 無限スクロールを利用して、スクロールをするたびに表示を許可するチャンネル以外を非表示にする
 $(window).scroll(function() {
-    // pageBottom = [bodyの高さ] - [windowの高さ]
     var pageBottom = document.body.clientHeight - window.innerHeight;
-    // スクロール量を取得
     var currentPos = window.scrollY;
-
-    // スクロール量が最下部の位置を過ぎたか判定
     if (pageBottom <= currentPos) {
-        // スクロールが画面末端に到達している時
         console.log("aaaaa");
         deleteOtherChannel();
     }
 });
 
 window.onload = function(){
-    console.log("delete_otherchannel.js loaded");
+    var channels = document.querySelectorAll("#items")[2].querySelectorAll("a");
+    channels[7].click();
+    channels = document.querySelectorAll("#items")[2].querySelectorAll("a");
+    // channels[channels.length - 1].click();
+
+    for (var i = 0; i < channels.length; i++) {
+        allow_channels.push(channels[i].innerText);
+    }
+    console.log(allow_channels);
     deleteOtherChannel();
 }
 
+window.onunload = function(){
+    deleteOtherChannel();
+}
 
+// 許可したチャンネル以外を非表示にする
 function deleteOtherChannel(){
     var contents = document.querySelectorAll("#contents > ytd-rich-item-renderer");
     for (var i = 0; i < contents.length; i++) {
         try {
-            // console.log(contents[i].querySelector("#channel-name").innerText);
-            if (contents[i].querySelector("#channel-name").innerText != "のばまんゲームス") {
+            if (!allow_channels.includes(contents[i].querySelector("#channel-name").innerText)) {
                 contents[i].style.display = "none";
             }
         }
         catch(e){
-            // console.log("error");
         }
     }
-    // console.log(contents.length, channel_name.length);
 }
+
