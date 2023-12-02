@@ -12,5 +12,10 @@
                 "./deleteshorts.js"
             ]
         }
+    ],
+    "background": [
+        {
+            "css":["style.css"]
+        }
     ]
 }
