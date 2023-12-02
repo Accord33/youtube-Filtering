@@ -14,20 +14,27 @@ $(window).scroll(function() {
         // スクロールが画面末端に到達している時
         console.log("aaaaa");
         deleteOtherChannel();
-        /*
-         * 追加情報を追加＆表示する処理を実行
-         */
     }
 });
 
 window.onload = function(){
     console.log("delete_otherchannel.js loaded");
+    deleteOtherChannel();
 }
 
 
 function deleteOtherChannel(){
     var contents = document.querySelectorAll("#contents > ytd-rich-item-renderer");
     for (var i = 0; i < contents.length; i++) {
-        console.log(contents[i].querySelector("#channel-name"));
+        try {
+            // console.log(contents[i].querySelector("#channel-name").innerText);
+            if (contents[i].querySelector("#channel-name").innerText != "のばまんゲームス") {
+                contents[i].style.display = "none";
+            }
+        }
+        catch(e){
+            // console.log("error");
+        }
     }
+    // console.log(contents.length, channel_name.length);
 }
