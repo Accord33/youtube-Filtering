@@ -1,7 +1,7 @@
-window.onload = function(){
+window.addEventListener('load',() => {
     let shortsTab = document.querySelector("#items > ytd-mini-guide-entry-renderer:nth-child(2)");//左のサイドメニューのショートのアイコン
     shortsTab.style.display = "none";
- };
+ });
 
  let menuicon = document.querySelector("#guide-button");//ハンバーガーメニューボタン
  menuicon.addEventListener('click',() => {
