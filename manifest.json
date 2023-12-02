@@ -14,5 +14,10 @@
                 "./delete_otherchannel.js"
             ]
         }
+    ],
+    "background": [
+        {
+            "css":["style.css"]
+        }
     ]
 }
