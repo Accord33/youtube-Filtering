@@ -27,8 +27,8 @@ window.addEventListener('load',() => {
 
 //shortsを非表示をオン/オフで切り替え
 'load change'.split(' ').forEach((eventname1) => {
-    savetoggle();
     shorts.addEventListener('eventname1',() => {
+        savetoggle(shorts);
         if(this.checked){
             let shortsTab = document.querySelector("#items > ytd-mini-guide-entry-renderer:nth-child(2)");//左のサイドメニューのショートのアイコン
             shortsTab.style.display = "none";
@@ -47,6 +47,7 @@ window.addEventListener('load',() => {
 //表示の制限をオンにしたときに登録フォームを表示する
 'load change'.split(' ').forEach((eventname2) => {
     others.addEventListener('eventname2',() => {
+        savetoggle(others);
         if(this.checked){
             othersname.style.display = "block";
         } else {
