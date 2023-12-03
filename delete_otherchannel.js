@@ -15,6 +15,8 @@ window.onload = function () {
     var channels = document.querySelectorAll("#items")[2].querySelectorAll("a");
     channels[7].click();
     channels = document.querySelectorAll("#items")[2].querySelectorAll("a");
+
+
     channels[channels.length - 1].click();
 
     for (var i = 0; i < channels.length; i++) {
