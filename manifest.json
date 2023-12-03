@@ -3,6 +3,15 @@
     "name": "youtube filteringer",
     "version": "1.0",
     "description": "filter youtube",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
     "content_scripts": [
         {
             "matches": [
