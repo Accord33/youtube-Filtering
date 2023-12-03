@@ -12,11 +12,7 @@
                 "./deleteshorts.js",
                 "./jquery-3.7.1.min.js",
                 "./delete_otherchannel.js"
-            ]
-        }
-    ],
-    "background": [
-        {
+            ],
             "css":["style.css"]
         }
     ]
