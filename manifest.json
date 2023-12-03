@@ -1,20 +1,27 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "youtube filteringer",
     "version": "1.0",
     "description": "filter youtube",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
     "content_scripts": [
         {
             "matches": [
                 "https://www.youtube.com/*"
             ],
             "js": [
-                "./deleteshorts.js"
-            ]
-        }
-    ],
-    "background": [
-        {
+                "./deleteshorts.js",
+                "./jquery-3.7.1.min.js",
+                "./delete_otherchannel.js"
+            ],
             "css":["style.css"]
         }
     ]

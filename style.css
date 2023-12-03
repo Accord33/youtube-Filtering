@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
-#google-center-div {
+#related {
+    display: none;
+}
+#donation-shelf {
     display: none;
 }
