@@ -20,13 +20,13 @@ function restoretoggle(toggle){
 }
 
 //トグルボタンの状態をポップアップを開いた時に復元する
-window.addEventListener('load',() => {
+document.addEventListener('load',() => {
     restoretoggle(shorts);
     restoretoggle(others);
 })
 
 //shortsを非表示をオン/オフで切り替え
-'load change'.split(' ').forEach((eventname1) => {
+'DOMContentLoaded change'.split(' ').forEach((eventname1) => {
     shorts.addEventListener('eventname1',() => {
         savetoggle(shorts);
         if(this.checked){
@@ -45,7 +45,7 @@ window.addEventListener('load',() => {
 })
 
 //表示の制限をオンにしたときに登録フォームを表示する
-'load change'.split(' ').forEach((eventname2) => {
+'DOMContentLoaded change'.split(' ').forEach((eventname2) => {
     others.addEventListener('eventname2',() => {
         savetoggle(others);
         if(this.checked){
